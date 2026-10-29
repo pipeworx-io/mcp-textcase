@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-textcase",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Text case conversion MCP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-textcase": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "textcase"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-textcase.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/textcase",
   "pipeworx": {
-    "sourceHash": "v1-8d71d9b1c790a9b16e1b4657582fc2c2901967fe8bac51d651ca327facb7193d",
-    "sourceCommit": "00c836ddeaecbdd581dcfb0fb1842efea104006e"
+    "mode": "gateway",
+    "slug": "textcase",
+    "gatewaySlug": "textcase",
+    "sourceHash": "v1-72426dc706e66e0b11e2ad862c1ca101a56f0f1ed40e9638616373af97669336",
+    "sourceCommit": "f47d581679e1e887373df51ba623f891fbe4c464"
   }
 }
